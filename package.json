@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  },
+  "name": "team-profile-manager",
+  "description": "This is an app can let user input team member information on the comman-line and the app can generatea  webpage to display every team member's information.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {
+    "jest": "^29.2.0"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deadseal001/team-profile-manager.git"
+  },
+  "author": "wenbo li",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deadseal001/team-profile-manager/issues"
+  },
+  "homepage": "https://github.com/deadseal001/team-profile-manager#readme"
+}
