@@ -9,32 +9,6 @@ const managerArr=[];
 const engineerArry=[];
 const internArry=[];
 
-// function addMemeber() {
-//     return new Promise (resolve=>{
-//     inquirer
-//         .prompt({
-//             type: 'list',
-//             name:'choose',
-//             message: 'Please Choose the What You Want to Do:',
-//             choices: ['Add Engineer', 'Add Intern','Finish building my team']
-//             }
-//         )
-//         .then((Input)=>{
-//             switch(Input.choose){
-//                 case 'Add Engineer':
-//                     //call add engineer function
-//                     return (addEngineer());
-//                 case 'Add Intern':
-//                     //call add Intern function
-//                     return (addIntern());
-//                 default:
-//                     return generatePage(managerArr, engineerArry,internArry);
-//             }
-//         })
-//     })
-
-// };
-
 function addManager() {
     inquirer
         .prompt([
@@ -269,17 +243,17 @@ function generateCards(a,b,c){
       ${a.map((element)=>{
         // console.log("a");
         return`
-          <card class="mangerCard col-2 shadow-sm">
-            <div  class="text-dark bg-secondary">
+        <div class="card col-5 col-sm-5 col-md-4 col-lg-2 shadow m-3">
+            <div  class="text-dark bg-secondary fs-2 px-3 text-wrap">
               ${element.name}<br>
               <i class="fa fa-mug-hot"> Manager</i>
             </div>  
-            <div class="col-12 flex justify-content-center">
+            <div class="col-12 flex justify-content-center px-3">
               <div class="col-10 my-4 text-dark">
                 <div>
                 ${element.getID()}
                 </div>
-                <div>
+                <div class="text-wrap">
                 <a href="mailto:${element.email}">${element.getEmail()}</a>
                 </div>
                 <div>
@@ -287,24 +261,24 @@ function generateCards(a,b,c){
                 </div>
               </div>
             </div>
-          </card>
+          </div>
         `
       })
       .join('')
       }
       ${b.map((element)=>{
         return` 
-          <card class="mangerCard col-2 text-dark bg-success">
-            <div class="text-dark bg-success">
+        <div class="card col-5 col-sm-5 col-md-4 col-lg-2 shadow m-3">
+            <div class="text-dark bg-success fs-2 px-3 text-wrap">
               ${element.name}<br>
               <i class="fa fa-glasses"> Engineer</i>
             </div>
-            <div class="col-12 flex justify-content-center">
+            <div class="col-12 flex justify-content-center  px-3">
               <div class="col-10 my-4 text-dark">
                 <div>
                 ${element.getID()}
                 </div>
-                <div>
+                <div class="text-wrap">
                 <a href="mailto:${element.email}">${element.getEmail()}</a>
                 </div>
                 <div>
@@ -312,24 +286,24 @@ function generateCards(a,b,c){
                 </div>
               </div>
             </div>
-          </card>
+          </div>
         `
       })
       .join('')
       } 
       ${c.map((element)=>{
         return`
-          <card class="mangerCard col-2 text-dark bg-warning">
-            <div class="text-dark bg-warning">
+        <div class="card col-5 col-sm-5 col-md-4 col-lg-2 shadow m-3">
+            <div class="text-dark bg-warning fs-2 px-3 text-wrap">
               ${element.name}<br>
               <i class="fa fa-graduation-cap"> Intern</i>
             </div>
-            <div class="col-12 flex justify-content-center">
+            <div class="col-12 flex justify-content-center px-3">
               <div class="col-10 my-4 text-dark">
                 <div>
                 ${element.getID()}
                 </div>
-                <div>
+                <div class="text-wrap">
                 <a href="mailto:${element.email}">${element.getEmail()}</a>
                 </div>
                 <div>
@@ -337,7 +311,7 @@ function generateCards(a,b,c){
                 </div>
               </div>
             </div>
-          </card>
+          </div>
         `
       })
       .join('')
@@ -367,7 +341,7 @@ function generatePage(a,b,c) {
     <div class="container bg-red flex-row justify-space-between align-center py-3">
         <h1 class="page-title text-center text-dark bg-gradient bg-primary py-2 px-3">My Team</h1>
     </header>
-    <main class="container flex my-5">
+    <main class="container d-flex flex-wrap justify-content-around my-5">
     ${generateCards(a,b,c)}
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -395,17 +369,4 @@ function writeToFile(data){
     });
 }
 
-function init(){
-    addManager()
-    // .then(page=>{
-    //     console.log(page);
-    //     return writeToFile(page);
-    // })
-    // .catch(err=>{
-    //     console.log(err);
-    // })
-};
-
-
-init();
-// addMemeber();
+addManager();
