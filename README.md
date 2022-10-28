@@ -20,7 +20,6 @@ This Team Profile Manager lets user to enter team member information on the comm
 Use node to open index.js. Follow the instructions on the command line to enter the information neede. 
 The app will generate a index.html file in the /dist folder to show the team members' information.
 
-https://note-taker-wl.herokuapp.com/
 
 [Use this link to find the Demo video](https://watch.screencastify.com/v/5Toql6p1v3vPaiv4to0J)
 
